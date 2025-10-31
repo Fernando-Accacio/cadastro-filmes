@@ -1,0 +1,179 @@
+:root {
+  --netflix-red: #E50914;
+  --netflix-red-hover: #B20710;
+  --netflix-black: #141414;
+  --netflix-dark-gray: #222222;
+  --netflix-light-gray: #AAAAAA;
+  --netflix-white: #FFFFFF;
+  --netflix-input-bg: #444;
+  --netflix-border: #555555;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--netflix-black);
+    color: var(--netflix-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--netflix-dark-gray);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--netflix-red);
+}
+
+header p {
+    font-size: 1rem;
+    color: var(--netflix-light-gray);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--netflix-light-gray);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    background-color: var(--netflix-input-bg);
+    color: var(--netflix-white);
+    border: 1px solid var(--netflix-border);
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+    color: var(--netflix-light-gray);
+    opacity: 0.7;
+}
+
+.form-group input:focus {
+    outline: none;
+    background-color: var(--netflix-input-bg);
+    border-color: var(--netflix-red);
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.3);
+}
+
+.btn {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--netflix-white);
+    background-color: var(--netflix-red);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--netflix-red-hover);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+#message {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.message.success {
+    color: #34c759;
+}
+
+.message.error {
+    color: #ff3b30;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.nav-link {
+    color: var(--netflix-light-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--netflix-red);
+}
+
+#resultado-lista {
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+table th, table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--netflix-border);
+}
+
+table th {
+    font-weight: 600;
+    color: var(--netflix-white);
+    background-color: var(--netflix-dark-gray);
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.btn-delete {
+    background-color: #ff3b30;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-delete:hover {
+    background-color: #ff453a;
+    transform: translateY(-1px);
+}

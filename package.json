@@ -1,0 +1,27 @@
+{
+  "name": "edutec-streaming-api",
+  "version": "1.0.0",
+  "description": "Projeto da atividade Edutec sobre CRUD com Node.js e MySQL",
+  "main": "rodarAPI.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon rodarAPI.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mysql"
+  ],
+  "author": "Andresssa e amigas",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.19.2",
+    "mysql2": "^3.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
