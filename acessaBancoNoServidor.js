@@ -1,9 +1,7 @@
 const mysql = require('mysql2');
-// NOVIDADE: Carrega as variáveis do arquivo .env
 require('dotenv').config();
 
 const acessaBancoNoServidor = mysql.createConnection({
-    // Lê as variáveis do process.env
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
