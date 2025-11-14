@@ -17,7 +17,7 @@ async function listarFilmes() {
         }
 
         let html = '<table>';
-        html += '<thead><tr><th>ID</th><th>Título</th><th>Gênero</th><th>Ano</th><th>Plataforma</th><th>Ação</th></tr></thead>';
+        html += '<thead><tr><th>ID</th><th>Título</th><th>Gênero</th><th>Ano</th><th>Plataforma</th><th>Ações</th></tr></thead>';
         html += '<tbody>';
 
         respostaObtida.forEach(filme => {
@@ -28,6 +28,9 @@ async function listarFilmes() {
                         <td>${filme.ano_lancamento}</td>
                         <td>${filme.plataforma_streaming}</td>
                         <td>
+                            <button class="btn-edit" onclick="editarFilme(${filme.id})">
+                                Editar
+                            </button>
                             <button class="btn-delete" onclick="apagarFilme(${filme.id})">
                                 Apagar
                             </button>
@@ -41,6 +44,10 @@ async function listarFilmes() {
     } catch (error) {
         resultadoDiv.innerHTML = `<p class="message error">Erro ao carregar lista: ${error.message}</p>`;
     }
+}
+
+function editarFilme(id) {
+    window.location.href = `cadastro.html?id=${id}`;
 }
 
 async function apagarFilme(id) {
