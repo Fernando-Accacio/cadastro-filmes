@@ -16,24 +16,29 @@
         </header>
         
         <form id="form-cadastro">
+            
             <div class="form-group">
                 <label for="titulo">Título</label>
-                <input type="text" id="titulo" name="titulo" required>
+                <input type="text" id="titulo" name="titulo" required maxlength="100">
+                <small id="contador-titulo" style="color: var(--netflix-light-gray); font-size: 0.8rem; display: block; margin-top: 5px;">0/100</small>
             </div>
             
             <div class="form-group">
                 <label for="genero">Gênero</label>
-                <input type="text" id="genero" name="genero" placeholder="Ex: Ação, Drama, Comédia…">
+                <input type="text" id="genero" name="genero" placeholder="Ex: Ação, Drama, Comédia…" maxlength="50">
+                <small id="contador-genero" style="color: var(--netflix-light-gray); font-size: 0.8rem; display: block; margin-top: 5px;">0/50</small>
             </div>
 
             <div class="form-group">
                 <label for="ano_lancamento">Ano de Lançamento</label>
-                <input type="text" inputmode="numeric" pattern="\d{4}" id="ano_lancamento" name="ano_lancamento" placeholder="Ex: 2024">
+                <input type="number" id="ano_lancamento" name="ano_lancamento" placeholder="Ex: 2024" required min="1888" max="2030" 
+                       oninput="if(this.value.length > 4) this.value = this.value.slice(0, 4);">
             </div>
 
             <div class="form-group">
                 <label for="plataforma_streaming">Plataforma</label>
-                <input type="text" id="plataforma_streaming" name="plataforma_streaming" placeholder="Ex: Netflix, Prime Video...">
+                <input type="text" id="plataforma_streaming" name="plataforma_streaming" placeholder="Ex: Netflix, Prime Video..." maxlength="50">
+                <small id="contador-plataforma" style="color: var(--netflix-light-gray); font-size: 0.8rem; display: block; margin-top: 5px;">0/50</small>
             </div>
             
             <button type="submit" class="btn">Cadastrar</button>
@@ -46,7 +51,7 @@
             <span style="color: #6e6e73; margin: 0 0.5rem;">|</span>
             <a href="lista.html" class="nav-link">Ver lista de cadastrados</a>
         </footer>
-        </div>
+    </div>
 
     <script src="cadastro.js"></script>
 </body>
