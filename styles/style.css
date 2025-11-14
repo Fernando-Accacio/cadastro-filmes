@@ -143,6 +143,23 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.95rem;
+  table-layout: fixed;
+}
+
+table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--netflix-border);
+  overflow-wrap: break-word;/
+}
+
+table th:last-child,
+table td:last-child {
+    width: 120px; 
+}
+
+table td:last-child {
+    white-space: nowrap;
 }
 
 table th, table td {
@@ -161,7 +178,6 @@ table tbody tr:last-child td {
   border-bottom: none;
 }
 
-/* --- NOVO ESTILO ADICIONADO --- */
 .btn-edit {
   background-color: #007bff;
   color: white;
@@ -178,7 +194,6 @@ table tbody tr:last-child td {
   background-color: #0056b3;
   transform: translateY(-1px);
 }
-/* --- FIM DO NOVO ESTILO --- */
 
 .btn-delete {
   background-color: #ff3b30;

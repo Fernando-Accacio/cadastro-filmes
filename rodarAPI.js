@@ -36,7 +36,6 @@ app.get('/filmes', (req, res) => {
     });
 });
 
-// --- NOVA ROTA ADICIONADA ---
 // Rota GET (Buscar UM filme por ID) - Para a página de edição
 app.get('/filmes/:id', (req, res) => {
     const { id } = req.params;
@@ -54,7 +53,6 @@ app.get('/filmes/:id', (req, res) => {
     });
 });
 
-// --- NOVA ROTA ADICIONADA ---
 // Rota PUT (Atualizar) - Para salvar a edição
 app.put('/filmes/:id', (req, res) => {
     const { id } = req.params;
