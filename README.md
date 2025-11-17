@@ -1,7 +1,7 @@
 # 🎬 Projeto API Streaming
 
 Este projeto foi desenvolvido como atividade da trilha **Node.js + Banco de Dados (CREATE/READ)**.
-O objetivo é construir uma **API RESTful em Node.js** com banco de dados **MySQL**, permitindo operações de **CRUD** — com foco em CREATE, READ e DELETE como bônus.
+O objetivo é construir uma **API RESTful em Node.js** com banco de dados **MySQL**, permitindo operações de **CRUD** — com foco em CREATE, READ e DELETE.
 
 Tema escolhido: **Streaming de Filmes e Séries**, com interface inspirada no estilo visual da **Netflix**.
 
@@ -12,7 +12,8 @@ Tema escolhido: **Streaming de Filmes e Séries**, com interface inspirada no es
 - ✅ Página inicial de navegação
 - ✅ Cadastro de filmes e séries (CREATE)
 - ✅ Listagem dos conteúdos cadastrados (READ)
-- ✅ Exclusão de registros (DELETE — funcionalidade bônus)
+- ✅ Edição de registros (UPDATE)
+- ✅ Exclusão de registros (DELETE)
 - ✅ Interface dark e responsiva
 - ✅ Variáveis de ambiente para proteger credenciais (.env)
 
@@ -21,16 +22,16 @@ Tema escolhido: **Streaming de Filmes e Séries**, com interface inspirada no es
 ## 💻 Tecnologias Utilizadas
 
 ### Backend
-- Node.js  
-- Express.js  
-- mysql2  
-- dotenv  
-- cors  
-- nodemon  
+- Node.js  
+- Express.js  
+- mysql2  
+- dotenv  
+- cors  
+- nodemon  
 
 ### Frontend
-- HTML5  
-- CSS3  
+- HTML5  
+- CSS3  
 - JavaScript (Fetch API)
 
 ### Banco de Dados
@@ -51,31 +52,31 @@ Tema escolhido: **Streaming de Filmes e Séries**, com interface inspirada no es
 Clone ou faça download deste repositório.
 
 ```bash
-git clone https://github.com/seu-repo-aqui
+git clone [https://github.com/seu-repo-aqui](https://github.com/seu-repo-aqui)
 ````
 
----
+-----
 
 ### 2️⃣ Configurar o Banco de Dados
 
 Abra o **MySQL Workbench** e crie conexão com:
 
-| Configuração | Valor                      |
+| Configuração | Valor                      |
 | ------------ | -------------------------- |
-| Host         | `benserverplex.ddns.net`   |
-| Porta        | `3306`                     |
-| Usuário      | `alunos`                   |
-| Senha        | *fornecida pelo professor* |
+| Host         | `benserverplex.ddns.net`   |
+| Porta        | `3306`                     |
+| Usuário      | `alunos`                   |
+| Senha        | *fornecida pelo professor* |
 
 > ⚠️ Se der erro, pode ser firewall da rede. Tente hotspot do celular.
 
 Depois:
 
-* Abra o schema `api_crud`
-* Execute o arquivo **tabelas.sql**
-* Verifique ✅ na execução
+  * Abra o schema `api_crud`
+  * Execute o arquivo **tabelas.sql**
+  * Verifique ✅ na execução
 
----
+-----
 
 ### 3️⃣ Instalar Dependências
 
@@ -85,7 +86,7 @@ No terminal, dentro da pasta do projeto:
 npm install
 ```
 
----
+-----
 
 ### 4️⃣ Criar o Arquivo `.env`
 
@@ -99,7 +100,7 @@ DB_NAME="api_crud"
 DB_PORT=3306
 ```
 
----
+-----
 
 ### 5️⃣ Rodar a API
 
@@ -113,41 +114,45 @@ Você verá:
 Servidor rodando em http://localhost:3000
 ```
 
----
+-----
 
 ### 6️⃣ Acessar o Projeto
 
 Abra no navegador:
 
-👉 [http://localhost:3000](http://localhost:3000)
+👉 [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000)
 
----
+-----
 
 ## 📁 Estrutura do Projeto
 
 ```
 /projeto-streaming
 ├── styles/
-│   └── style.css
-├── .env            # Criar manualmente
+│   └── style.css
+├── .env            # Criar manualmente
 ├── acessaBancoNoServidor.js
-├── cadastro.html
-├── cadastro.js
+├── cadastrar.html
+├── cadastrar.js
+├── deletar.html
+├── deletar.js
+├── editar.html
+├── editar.js
 ├── index.html
-├── lista.html
-├── lista.js
+├── listar.html
+├── listar.js
 ├── rodarAPI.js
 ├── tabelas.sql
 ├── package.json
 └── README.md
 ```
 
----
+-----
 
 ## 👥 Integrantes do Grupo
 
-* Andressa Rodrigues Accacio
-* Bruna Marques
-* Myria Vitoria
-* Nicole Barros
-* Rayssa Cruz
+  * Andressa Rodrigues Accacio
+  * Bruna Marques
+  * Myria Vitoria
+  * Nicole Barros
+  * Rayssa Cruz
