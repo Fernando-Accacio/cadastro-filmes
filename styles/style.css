@@ -48,6 +48,45 @@ header p {
   color: var(--netflix-light-gray);
 }
 
+        .nav-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .nav-link-btn {
+            display: block;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+        }
+
+        .btn-cadastro {
+            background-color: #E50914;
+            color: #ffffff;
+        }
+        .btn-cadastro:hover {
+            background-color: #B20710;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
+        }
+
+        .btn-lista {
+            background-color: #444;
+            color: #ffffff;
+        }
+        .btn-lista:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+        
+
 .form-group {
   margin-bottom: 1.25rem;
 }
