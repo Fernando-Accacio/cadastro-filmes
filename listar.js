@@ -31,11 +31,11 @@ async function listarFilmes() {
                             <button class="btn-edit" onclick="editarFilme(${filme.id})">
                                 Editar
                             </button>
-                            <button class="btn-delete" onclick="apagarFilme(${filme.id})">
+                            <button class="btn-delete" onclick="navegarParaDeletar(${filme.id})">
                                 Apagar
                             </button>
                         </td>
-                     </tr>`;
+                   </tr>`;
         });
 
         html += '</tbody></table>';
@@ -47,29 +47,9 @@ async function listarFilmes() {
 }
 
 function editarFilme(id) {
-    window.location.href = `cadastro.html?id=${id}`;
+    window.location.href = `editar.html?id=${id}`;
 }
 
-async function apagarFilme(id) {
-    if (!confirm('Tem certeza que deseja apagar este filme?')) {
-        return; 
-    }
-
-    try {
-        const response = await fetch(`http://localhost:3000/filmes/${id}`, {
-            method: 'DELETE'
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            alert('Filme apagado com sucesso!');
-            listarFilmes(); 
-        } else {
-            throw new Error(data.message || 'Erro ao apagar filme');
-        }
-
-    } catch (error) {
-        alert(error.message);
-    }
+function navegarParaDeletar(id) {
+    window.location.href = `deletar.html?id=${id}`;
 }

@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('.')); 
 
-// Rota POST (Cadastrar) - Sem alteração
+// Rota POST (Cadastrar)
 app.post('/filmes', (req, res) => {
     const { titulo, genero, ano_lancamento, plataforma_streaming } = req.body;
     const codigoDoMySQL = 'INSERT INTO filmes_streaming (titulo, genero, ano_lancamento, plataforma_streaming) VALUES (?, ?, ?, ?)';
@@ -23,7 +23,7 @@ app.post('/filmes', (req, res) => {
     });
 });
 
-// Rota GET (Listar todos) - Sem alteração
+// Rota GET (Listar todos)
 app.get('/filmes', (req, res) => {
     const codigoDoMySQL = 'SELECT * FROM filmes_streaming';
 
@@ -49,7 +49,7 @@ app.get('/filmes/:id', (req, res) => {
         if (results.length === 0) {
             return res.status(404).json({ message: 'Filme não encontrado' });
         }
-        res.status(200).json(results[0]); // Retorna o primeiro (e único) resultado
+        res.status(200).json(results[0]);
     });
 });
 
@@ -74,7 +74,7 @@ app.put('/filmes/:id', (req, res) => {
     });
 });
 
-// Rota DELETE (Apagar) - Sem alteração
+// Rota DELETE (Apagar)
 app.delete('/filmes/:id', (req, res) => {
     const { id } = req.params; 
 
@@ -98,6 +98,6 @@ app.delete('/filmes/:id', (req, res) => {
 
 app.listen(3000, () => {
     console.log('Servidor rodando em http://localhost:3000');
-    console.log('Para cadastrar, acesse: http://localhost:3000/cadastro.html');
-    console.log('Para listar, acesse: http://localhost:3000/lista.html');
+    console.log('Para cadastrar, acesse: http://localhost:3000/cadastrar.html');
+    console.log('Para listar, acesse: http://localhost:3000/listar.html');
 });

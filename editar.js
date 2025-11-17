@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('form-cadastro');
+    const form = document.getElementById('form-edicao');
     const messageDiv = document.getElementById('message');
     const formButton = form.querySelector('button[type="submit"]');
-    const headerTitle = document.querySelector('header h1');
-    const headerSubtitle = document.querySelector('header p');
+    const headerTitle = document.getElementById('header-titulo');
+    const headerSubtitle = document.getElementById('header-subtitulo');
 
     /**
      * @param {string} inputId
@@ -23,28 +23,28 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (contagem >= limite) {
                 contador.style.color = '#ff3b30';
+            } else {
                 contador.style.color = 'var(--netflix-light-gray)';
             }
         };
 
         input.addEventListener('input', atualizarContagem);
-        
         return atualizarContagem;
     }
-
 
     const atualizarContadorTitulo = setupContador('titulo', 'contador-titulo', 100);
     const atualizarContadorGenero = setupContador('genero', 'contador-genero', 50);
     const atualizarContadorPlataforma = setupContador('plataforma_streaming', 'contador-plataforma', 50);
 
-
     const urlParams = new URLSearchParams(window.location.search);
     const filmeId = urlParams.get('id');
-    let isEditMode = false;
 
     if (filmeId) {
-        isEditMode = true;
         carregarDadosParaEdicao(filmeId);
+    } else {
+        messageDiv.textContent = 'ID do filme não fornecido.';
+        messageDiv.className = 'message error';
+        form.style.display = 'none';
     }
 
     async function carregarDadosParaEdicao(id) {
@@ -57,10 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('genero').value = filme.genero;
             document.getElementById('ano_lancamento').value = filme.ano_lancamento;
             document.getElementById('plataforma_streaming').value = filme.plataforma_streaming;
-
-            headerTitle.textContent = 'Editar Filme';
-            headerSubtitle.textContent = 'Altere os dados do filme abaixo.';
-            formButton.textContent = 'Salvar Alterações';
 
             atualizarContadorTitulo();
             atualizarContadorGenero();
@@ -82,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
             plataforma_streaming: document.getElementById('plataforma_streaming').value
         };
 
-        const url = isEditMode ? `http://localhost:3000/filmes/${filmeId}` : 'http://localhost:3000/filmes';
-        const method = isEditMode ? 'PUT' : 'POST';
+        const url = `http://localhost:3000/filmes/${filmeId}`;
+        const method = 'PUT';
 
         try {
             const response = await fetch(url, {
@@ -95,19 +91,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
 
             if (response.ok) {
-                if (isEditMode) {
-                    messageDiv.textContent = 'Filme atualizado com sucesso!';
-                } else {
-                    messageDiv.textContent = 'Filme cadastrado com sucesso!';
-                    form.reset();
-                    
-                    atualizarContadorTitulo();
-                    atualizarContadorGenero();
-                    atualizarContadorPlataforma();
-                }
+                messageDiv.textContent = 'Filme atualizado com sucesso!';
                 messageDiv.className = 'message success';
+
+                if (formButton) {
+                    formButton.disabled = true;
+                }
+
+                setTimeout(() => {
+                    window.location.href = 'listar.html';
+                }, 2000);
+                
             } else {
-                throw new Error(data.error || data.message || (isEditMode ? 'Erro ao atualizar' : 'Erro ao cadastrar'));
+                throw new Error(data.error || data.message || 'Erro ao atualizar');
             }
         } catch (error) {
             messageDiv.textContent = 'Erro: ' + error.message;

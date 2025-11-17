@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Streaming</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="https://emojicdn.elk.sh/🎬" type="image/favicon.ico">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Cadastro de Filmes e Séries</h1>
+            <p>Adicione um novo filme à sua plataforma.</p>
+        </header>
+        
+        <form id="form-cadastro">
+            
+            <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" name="titulo" required maxlength="100">
+                <small id="contador-titulo" style="color: var(--netflix-light-gray); font-size: 0.8rem; display: block; margin-top: 5px;">0/100</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="genero">Gênero</label>
+                <input type="text" id="genero" name="genero" placeholder="Ex: Ação, Drama, Comédia…" maxlength="50">
+                <small id="contador-genero" style="color: var(--netflix-light-gray); font-size: 0.8rem; display: block; margin-top: 5px;">0/50</small>
+            </div>
+
+            <div class="form-group">
+                <label for="ano_lancamento">Ano de Lançamento</label>
+                <input type="number" id="ano_lancamento" name="ano_lancamento" placeholder="Ex: 2024" required min="1888" max="2030" 
+                       oninput="if(this.value.length > 4) this.value = this.value.slice(0, 4);">
+            </div>
+
+            <div class="form-group">
+                <label for="plataforma_streaming">Plataforma</label>
+                <input type="text" id="plataforma_streaming" name="plataforma_streaming" placeholder="Ex: Netflix, Prime Video..." maxlength="50">
+                <small id="contador-plataforma" style="color: var(--netflix-light-gray); font-size: 0.8rem; display: block; margin-top: 5px;">0/50</small>
+            </div>
+            
+            <button type="submit" class="btn">Cadastrar</button>
+        </form>
+        
+        <div id="message"></div>
+        
+        <footer>
+            <a href="index.html" class="nav-link">Início</a>
+            <span style="color: #6e6e73; margin: 0 0.5rem;">|</span>
+            <a href="listar.html" class="nav-link">Ver lista de cadastrados</a>
+        </footer>
+    </div>
+
+    <script src="cadastrar.js"></script>
+</body>
+</html>

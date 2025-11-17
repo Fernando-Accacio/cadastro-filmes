@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apagar Filme</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="https://emojicdn.elk.sh/🎬" type="image/svg+xml">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Confirmar Exclusão</h1>
+        </header>
+
+        <div class="confirmation-box">
+            <p>Tem certeza que deseja apagar este filme?</p>
+            <div id="filme-info">Carregando...</div>
+            
+            <div class="btn-group">
+                <button id="btn-confirmar-delete" class="btn btn-delete">Sim, apagar</button>
+                <button id="btn-cancelar" class="btn">Cancelar (Voltar)</button>
+            </div>
+        </div>
+        
+        <div id="message"></div>
+        
+        <footer>
+            <a href="index.html" class="nav-link">Início</a>
+            <span style="color: #6e6e73; margin: 0 0.5rem;">|</span>
+            <a href="listar.html" class="nav-link">Ver lista de cadastrados</a>
+        </footer>
+    </div>
+
+    <script src="deletar.js"></script>
+</body>
+</html>

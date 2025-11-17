@@ -156,6 +156,7 @@ table td {
 table th:last-child,
 table td:last-child {
     width: 120px; 
+    text-align: center;
 }
 
 table td:last-child {
@@ -188,6 +189,7 @@ table tbody tr:last-child td {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
+  margin-right: 5px;
 }
 
 .btn-edit:hover {
@@ -201,11 +203,69 @@ table tbody tr:last-child td {
   border: none;
   padding: 8px 12px;
   font-size: 0.9rem;
-  font-weight: 500;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
-  margin-left: 5px;
+}
+
+table td:last-child {
+  white-space: nowrap;
+
+  /* ADICIONE ESTAS DUAS LINHAS: */
+  position: relative;
+  left: -5px;
+}
+
+.confirmation-box {
+    background-color: #2a2a2a;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+#filme-info {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--netflix-red);
+    margin: 1rem 0;
+}
+
+#btn-confirmar-delete {
+    background-color: var(--netflix-red);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.confirmation-box {
+    background-color: #2a2a2a;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--netflix-border);
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.btn-group .btn {
+    flex-grow: 1;
+}
+
+#filme-info {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--netflix-red);
+    margin: 1.5rem 0;
+    word-break: break-all;
 }
 
 .btn-delete:hover {
